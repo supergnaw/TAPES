@@ -1,0 +1,13 @@
+1. Captioning - Integrate Whisper for:
+  - Automatic SRT caption generation
+  - Transcript files
+  - AI generated summaries
+3. Audiobook Output
+  - Extract audio from MKV into `.m4a`
+  - Convert `.m4a` into `.m4b`
+  - Inject chapter markers
+  - Add cover art
+4. Metadata Improvements - Integrate Whisper for:
+  - `tvshow.nfo` (series metadata)
+  - `seasonXX.nfo` (season metadata)
+  - `SxxEyy.nfo` (episode metadata)
