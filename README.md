@@ -1,3 +1,5 @@
+![Training Assembly & Production Episode System](draft_logo_copilot.png)
+
 # TAPES
 **Training Assembly & Production Episode System**
 
