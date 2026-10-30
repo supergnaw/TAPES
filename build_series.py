@@ -33,9 +33,12 @@ Usage:
     python build_training_series.py --root "." --season 2 --episode 3
 """
 import argparse
+import os
 from dataclasses import dataclass
 import html
 import re
+from os.path import exists
+
 import logger
 import subprocess
 import sys
@@ -218,6 +221,7 @@ class Episode:
         Creates: S01E01.nfo next to S01E01.mkv
         """
         nfo_path = output_dir / f"{self.plex_name}.nfo"
+        os.makedirs(Path(nfo_path).parent, exist_ok=True)
         num_nfo: int = 0
 
         xml = f"""<episodedetails>
@@ -304,6 +308,7 @@ class Season:
         """
         n = f"{self.se_num:02d}"
         nfo_path = output_dir / self.plex_folder / f"season{n}.nfo"
+        os.makedirs(Path(nfo_path).parent, exist_ok=True)
         num_nfo: int = 0
 
         xml = f"""<season>
@@ -394,6 +399,7 @@ class Series:
         Creates: tvshow.nfo in the series root folder
         """
         nfo_path = self.output_dir / f"{self.title}.nfo"
+        os.makedirs(Path(nfo_path).parent, exist_ok=True)
         num_nfo: int = 0
 
         xml = f"""<tvshow>
